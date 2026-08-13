@@ -1,6 +1,6 @@
 {
   "name": "@frankline-sable/result",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A small, type-safe Result implementation for TypeScript",
   "main": "./dist/index.js",
   "types": ".dist/index.d.ts",
@@ -14,22 +14,22 @@
     "test": "vitest run",
     "build": "tsc"
   },
- "repository": {
-  "type": "git",
-  "url": "git+https://github.com/Frankline-Sable/frankline-result.git"
-},
-"bugs": {
-  "url": "https://github.com/Frankline-Sable/frankline-result/issues"
-},
-"homepage": "https://github.com/Frankline-Sable/frankline-result#readme",
-"keywords": [
-  "typescript",
-  "result",
-  "error-handling",
-  "functional-programming"
-],
-"author": "Frankline Sable",
-"license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frankline-Sable/frankline-result.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Frankline-Sable/frankline-result/issues"
+  },
+  "homepage": "https://github.com/Frankline-Sable/frankline-result#readme",
+  "keywords": [
+    "typescript",
+    "result",
+    "error-handling",
+    "functional-programming"
+  ],
+  "author": "Frankline Sable",
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "@types/node": "^26.2.0",
