@@ -1,0 +1,26 @@
+{
+  "name": "@frankline-sable/result",
+  "version": "0.1.0",
+  "description": "A lightweight typed Result type for TypeScript",
+  "main": "./dist/index.js",
+  "types": ".dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "Frankline Sable",
+  
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
