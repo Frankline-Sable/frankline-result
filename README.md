@@ -1,0 +1,43 @@
+# Frankline Result
+
+A small, type-safe Result implementation for TypeScript.
+
+## Why?
+
+Instead of throwing errors or returning ambiguous values, `Result<T, E>` represents an operation that can either succeed with a value or fail with an error.
+
+## Example
+
+```ts
+import { ok, err } from '@frankline-sable/result';
+
+const success = ok(42);
+
+if (success.isOk()) {
+  console.log(success.value);
+}
+
+const failure = err('Something went wrong');
+
+if (failure.isErr()) {
+  console.log(failure.error);
+}
+```
+
+
+
+## Features
+* Type-safe success and error results
+* Generic TypeScript support
+* No runtime dependencies
+* Lightweight
+* Fully tested
+
+
+## Status
+
+Early development — API may change before 1.0.0.
+
+## License
+
+#### MIT
