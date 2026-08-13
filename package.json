@@ -14,9 +14,22 @@
     "test": "vitest run",
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "Frankline Sable",
-  "license": "ISC",
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Frankline-Sable/frankline-result.git"
+},
+"bugs": {
+  "url": "https://github.com/Frankline-Sable/frankline-result/issues"
+},
+"homepage": "https://github.com/Frankline-Sable/frankline-result#readme",
+"keywords": [
+  "typescript",
+  "result",
+  "error-handling",
+  "functional-programming"
+],
+"author": "Frankline Sable",
+"license": "MIT",
   "type": "module",
   "devDependencies": {
     "@types/node": "^26.2.0",
