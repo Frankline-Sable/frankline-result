@@ -24,7 +24,24 @@ if (failure.isErr()) {
 }
 ```
 
+### Transforming values
 
+You can transform a successful result with `map()`:
+
+```ts
+const result = ok(10).map(value => value * 2);
+
+if (result.isOk()) {
+  console.log(result.value); // 20
+}
+
+
+const result = err('Failed').map(value => value * 2);
+
+if (result.isErr()) {
+  console.log(result.error); // Failed
+}
+```
 
 ## Features
 * Type-safe success and error results
