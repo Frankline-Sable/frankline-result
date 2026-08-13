@@ -41,6 +41,22 @@ const result = err('Failed').map(value => value * 2);
 if (result.isErr()) {
   console.log(result.error); // Failed
 }
+
+```
+
+
+### Using a fallback value
+
+`unwrapOr()` returns the successful value or a fallback value when the result is an error.
+
+```ts
+const success = ok(42);
+
+console.log(success.unwrapOr(0)); // 42
+
+const failure = err('Failed');
+
+console.log(failure.unwrapOr(0)); // 0
 ```
 
 ## Features
