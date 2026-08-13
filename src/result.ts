@@ -5,6 +5,10 @@ export class Ok<T> {
 
     constructor(public readonly value:T){}
 
+    map<U>(fn: (value: T)=>U):Result<U, never>{
+        return ok(fn(this.value));
+    }
+
     isOk(): this is Ok<T>{
         return true;
     }
@@ -18,6 +22,10 @@ export class Err<E> {
     readonly success = false;
 
     constructor(public readonly error: E){}
+
+    map<U>(_fn:(value:never)=>U): Result<never, E>{
+        return this;
+    }
 
     isOk(): this is never{
         return false;

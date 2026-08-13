@@ -3,6 +3,7 @@ export declare class Ok<T> {
     readonly value: T;
     readonly success = true;
     constructor(value: T);
+    map<U>(fn: (value: T) => U): Result<U, never>;
     isOk(): this is Ok<T>;
     isErr(): this is never;
 }
@@ -10,6 +11,7 @@ export declare class Err<E> {
     readonly error: E;
     readonly success = false;
     constructor(error: E);
+    map<U>(_fn: (value: never) => U): Result<never, E>;
     isOk(): this is never;
     isErr(): this is Err<E>;
 }

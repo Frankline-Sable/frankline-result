@@ -3,6 +3,9 @@ export class Ok {
         this.value = value;
         this.success = true;
     }
+    map(fn) {
+        return ok(fn(this.value));
+    }
     isOk() {
         return true;
     }
@@ -14,6 +17,9 @@ export class Err {
     constructor(error) {
         this.error = error;
         this.success = false;
+    }
+    map(_fn) {
+        return this;
     }
     isOk() {
         return false;
