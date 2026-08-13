@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest';
-import { ok, err} from '../src';
+import {ok, err} from '../src';
 
 describe('Result', () => {
     it('creates a successful result', () => {
@@ -8,7 +8,7 @@ describe('Result', () => {
         expect(result.isOk()).toBe(true);
 
 
-        if(result.isOk()){
+        if (result.isOk()) {
             expect(result.value).toBe(42);
         }
     });
@@ -18,27 +18,39 @@ describe('Result', () => {
 
         expect(result.isErr()).toBe(true);
 
-        if(result.isErr()){
+        if (result.isErr()) {
             expect(result.error).toBe('Something went wrong');
         }
     });
 
-    it("maps a successful value",()=>{
-        const result =ok(10).map(value=>value*2);
+    it("maps a successful value", () => {
+        const result = ok(10).map(value => value * 2);
 
         expect(result.isOk()).toBe(true);
 
-        if(result.isOk()){
+        if (result.isOk()) {
             expect(result.value).toBe(20);
         }
     });
-    it("does not map an errror result",()=>{
-        const result = err("Failed").map(value=>value);
+    it("does not map an errror result", () => {
+        const result = err("Failed").map(value => value);
 
         expect(result.isErr()).toBe(true);
 
-        if(result.isErr()){
+        if (result.isErr()) {
             expect(result.error).toBe("Failed");
         }
-    })
     });
+
+    it("it returns value from an ok result with unwrap", () => {
+        const result = ok(42);
+
+        expect(result.unwrapOr(0)).toBe(42);
+    });
+
+    it("It return error from unwrap", () => {
+        const result = err('Failed');
+
+        expect(result.unwrapOr(0)).toBe(0);
+    })
+});

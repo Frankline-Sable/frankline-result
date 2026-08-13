@@ -3,14 +3,17 @@ export class Ok {
         this.value = value;
         this.success = true;
     }
-    map(fn) {
-        return ok(fn(this.value));
-    }
     isOk() {
         return true;
     }
     isErr() {
         return false;
+    }
+    map(fn) {
+        return ok(fn(this.value));
+    }
+    unwrapOr(_defaultValue) {
+        return this.value;
     }
 }
 export class Err {
@@ -18,14 +21,17 @@ export class Err {
         this.error = error;
         this.success = false;
     }
-    map(_fn) {
-        return this;
-    }
     isOk() {
         return false;
     }
     isErr() {
         return true;
+    }
+    map(_fn) {
+        return this;
+    }
+    unwrapOr(_defaultValue) {
+        return _defaultValue;
     }
 }
 export const ok = (value) => new Ok(value);
