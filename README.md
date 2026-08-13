@@ -54,7 +54,3 @@ if (result.isErr()) {
 ## Status
 
 Early development — API may change before 1.0.0.
-
-## License
-
-#### MIT
